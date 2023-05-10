@@ -67,6 +67,6 @@ class LessonsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lesson_params
-      params.require(:lesson).permit(:header, :text, :user_id, :data)
+      params.require(:lesson).permit(:header, :text, :data).merge(user_id: current_user.id)
     end
 end
