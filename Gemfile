@@ -55,6 +55,22 @@ gem 'devise'
 gem "cssbundling-rails", "~> 1.1"
 gem "jsbundling-rails", "~> 1.1"
 
+
+# Pay gem itself
+gem "pay", "~> 6.0"
+
+# To use Stripe, also include:
+gem "stripe", "~> 8.0"
+
+# To use Braintree + PayPal, also include:
+gem "braintree", "~> 4.7"
+
+# # To use Paddle, also include:
+# gem "paddle_pay", "~> 0.2"
+
+# To use Receipts gem for creating invoice and receipt PDFs, also include:
+gem "receipts", "~> 2.0"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

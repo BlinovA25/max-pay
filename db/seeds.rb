@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+user = User.create!(email: 'admin@gmail.com', password: 'qwerty')
+
+Lesson.create!([{ header: "First Lesson", text: "Text for First lesson on the portal...", user_id: user.id },
+               { header: "Second Lesson", text: "Second lesson on this portal is ReadMe guide", user_id: user.id }])
+
+
