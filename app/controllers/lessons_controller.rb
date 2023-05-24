@@ -2,10 +2,11 @@ class LessonsController < ApplicationController
   before_action :authenticate_user!
 
   before_action :set_lesson, only: %i[ show edit update destroy ]
+  before_action :enable_search, only: :index
 
   # GET /lessons or /lessons.json
   def index
-    @lessons = Lesson.all
+    @lessons = Lesson.search(params[:search])
   end
 
   # GET /lessons/1 or /lessons/1.json
@@ -63,6 +64,10 @@ class LessonsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_lesson
       @lesson = Lesson.find(params[:id])
+    end
+
+    def enable_search
+      @enable_search = true
     end
 
     # Only allow a list of trusted parameters through.
