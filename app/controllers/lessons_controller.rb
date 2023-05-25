@@ -24,6 +24,8 @@ class LessonsController < ApplicationController
 
   # POST /lessons or /lessons.json
   def create
+    pp lesson_params
+
     @lesson = Lesson.new(lesson_params)
 
     respond_to do |format|
